@@ -1,0 +1,144 @@
+<mat-card class="example-card">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<mat-card-header>
+					<div mat-card-avatar class="example-header-image"></div>
+					<mat-card-title>Shiba Inu</mat-card-title>
+					<mat-card-subtitle>Dog Breed</mat-card-subtitle>
+				</mat-card-header>
+				<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" 
+				alt="Photo of a Shiba Inu" class="img-class rounded-circle">
+			</div>
+			<div class="col-sm-9">
+				<form>
+					<mat-accordion>
+						<mat-expansion-panel>
+							<mat-expansion-panel-header>
+								<mat-panel-title>
+									Personal data (*)
+								</mat-panel-title>
+								<mat-panel-description>
+									Name and Personal Information
+								</mat-panel-description>
+							</mat-expansion-panel-header>
+							<mat-form-field>
+								<input matInput placeholder="Roll No" name="Roll" readonly>
+							</mat-form-field>
+							<br>
+							<mat-form-field>
+								<input matInput placeholder="First name" name="first_name" required>
+							</mat-form-field>
+							<mat-form-field class="name_margin">
+								<input matInput placeholder="Middle name" name="middle_name">
+							</mat-form-field>
+							<mat-form-field class="name_margin">
+								<input matInput placeholder="Last name" name="last_name">
+							</mat-form-field>
+							<br>
+							<mat-form-field>
+								<input matInput placeholder="Date of Birth" type="date" name="DOB" required>
+							</mat-form-field>
+							<br>
+							<mat-form-field>
+								<input matInput placeholder="Father's name" name="FATHER_NAME">
+							</mat-form-field>
+							<mat-form-field class="name_margin">
+								<input matInput placeholder="Mother's name" name="MOTHER_NAME">
+							</mat-form-field>
+						</mat-expansion-panel>
+						<br>
+						<mat-expansion-panel>
+							<mat-expansion-panel-header>
+								<mat-panel-title>
+								Address
+								</mat-panel-title>
+								<mat-panel-description>
+								Contact Details
+								</mat-panel-description>
+							</mat-expansion-panel-header>
+							<mat-form-field>
+								<input matInput placeholder="Address Type" name="ADD_TYPE_1">
+							</mat-form-field>
+							<mat-form-field class="name_margin">
+								<input matInput placeholder="Address Line 1" name="ADD_LINE_1">
+							</mat-form-field>
+							<mat-form-field class="name_margin">
+								<input matInput placeholder="Address Line 2" name="ADD_LINE_2">
+							</mat-form-field>
+							<br>
+							<mat-form-field>
+								<input matInput placeholder="Pin Code" name="PIN_CODE">
+							</mat-form-field>
+							<mat-form-field class="name_margin">
+								<input matInput placeholder="State" name="STATE">
+							</mat-form-field>
+							<mat-form-field class="name_margin">
+								<input matInput placeholder="Country" name="COUNTRY">
+							</mat-form-field>
+							<br>
+							<mat-form-field>
+								<input matInput placeholder="Address Type (2)" name="ADD_TYPE_2">
+							</mat-form-field>
+							<mat-form-field class="name_margin">
+								<input matInput placeholder="Address Line 1" name="ADD_LINE_12">
+							</mat-form-field>
+							<mat-form-field class="name_margin">
+								<input matInput placeholder="Address Line 2" name="ADD_LINE_22">
+							</mat-form-field>
+							<br>
+							<mat-form-field>
+								<input matInput placeholder="Pin Code" name="PIN_CODE2">
+							</mat-form-field>
+							<mat-form-field class="name_margin">
+								<input matInput placeholder="State" name="STATE2">
+							</mat-form-field>
+							<mat-form-field class="name_margin">
+								<input matInput placeholder="Country" name="COUNTRY2">
+							</mat-form-field>
+							<br>
+							<mat-form-field>
+								<input matInput placeholder="Mobile 1" name="MOBILE1" phone minlength="10">
+							</mat-form-field>
+							<mat-form-field class="name_margin">
+								<input matInput placeholder="Mobile 2" name="MOBILE2" phone minlength="10">
+							</mat-form-field>
+							<br>
+							<mat-form-field>
+								<input matInput placeholder="Email 1" name="EMAIL1" phone minlength="10">
+							</mat-form-field>
+							<mat-form-field class="name_margin">
+								<input matInput placeholder="Email 2" name="EMAIL2" phone minlength="10">
+							</mat-form-field>
+						</mat-expansion-panel>
+						<br>
+						<mat-expansion-panel>
+							<mat-expansion-panel-header>
+								<mat-panel-title>
+								Cradentials
+								</mat-panel-title>
+								<mat-panel-description>
+								Do you w ants to change your password??
+								</mat-panel-description>
+							</mat-expansion-panel-header>
+							<mat-form-field>
+								<input matInput placeholder="User Name" name="user_name" required>
+							</mat-form-field>
+							<br>
+							<mat-form-field>
+								<input matInput placeholder="Password" name="password" required>
+							</mat-form-field>
+							<br>
+							<mat-form-field>
+								<input matInput placeholder="confirm_password" name="confirm_password" required>
+							</mat-form-field>
+						</mat-expansion-panel>
+					</mat-accordion>
+				</form>
+				<br>
+				<button type="submit" mat-raised-button color="primary" >Update</button>
+				<button type="submit" mat-raised-button color="default"class="name_margin">Clear</button>
+			</div>
+		</div>
+	</div>
+</mat-card>

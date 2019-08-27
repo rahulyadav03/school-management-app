@@ -1,0 +1,88 @@
+<div class="row">
+        <div class="col-sm-3">
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker" placeholder="Choose Start Date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-3">
+            <mat-form-field>
+                <input matInput [matDatepicker]="pickerTo" placeholder="Choose End Date">
+                <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+                <mat-datepicker #pickerTo></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+        <!-- Position Column -->
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> Date. </th>
+            <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        </ng-container>
+
+        <!-- Day Column -->
+        <ng-container matColumnDef="day">
+            <th mat-header-cell *matHeaderCellDef> Day. </th>
+            <td mat-cell *matCellDef="let element"> {{element.day}} </td>
+        </ng-container>
+    
+        <!-- Period Column -->
+        <ng-container matColumnDef="period_1">
+            <th mat-header-cell *matHeaderCellDef> Period 1 <br> 8:00 - 8:40</th>
+            <td mat-cell *matCellDef="let element" [ngStyle]="{color: element.period_1.color}" class="table-cell-css"> {{element.period_1.name}} </td>
+        </ng-container>
+    
+        <!-- Period Column -->
+        <ng-container matColumnDef="period_2">
+            <th mat-header-cell *matHeaderCellDef> Period 2 <br> 8:40 - 9:30</th>
+            <td mat-cell *matCellDef="let element" [ngStyle]="{color: element.period_2.color}" class="table-cell-css"> {{element.period_2.name}} </td>
+        </ng-container>
+    
+        <!-- Period Column -->
+        <ng-container matColumnDef="period_3">
+            <th mat-header-cell *matHeaderCellDef> Period 3 <br> 9:30 - 10:10</th>
+            <td mat-cell *matCellDef="let element" [ngStyle]="{color: element.period_3.color}" class="table-cell-css"> {{element.period_3.name}} </td>
+        </ng-container>
+    
+        <!-- Period Column -->
+        <ng-container matColumnDef="period_4">
+            <th mat-header-cell *matHeaderCellDef> Period 4 <br> 10:20 - 11:00</th>
+            <td mat-cell *matCellDef="let element" [ngStyle]="{color: element.period_4.color}" class="table-cell-css"> {{element.period_4.name}} </td>
+        </ng-container>
+    
+        <!-- Period Column -->
+        <ng-container matColumnDef="period_5">
+            <th mat-header-cell *matHeaderCellDef> Period 5 <br> 11:00 - 11:40</th>
+            <td mat-cell *matCellDef="let element" [ngStyle]="{color: element.period_5.color}" class="table-cell-css"> {{element.period_5.name}} </td>
+        </ng-container>
+    
+        <!-- Period Column -->
+        <ng-container matColumnDef="period_6">
+            <th mat-header-cell *matHeaderCellDef> Period 6 <br> 12:00 - 12:40</th>
+            <td mat-cell *matCellDef="let element" [ngStyle]="{color: element.period_6.color}" class="table-cell-css"> {{element.period_6.name}} </td>
+        </ng-container>
+    
+        <!-- Period Column -->
+        <ng-container matColumnDef="period_7">
+            <th mat-header-cell *matHeaderCellDef> Period 7 <br> 12:40 - 1:20</th>
+            <td mat-cell *matCellDef="let element" [ngStyle]="{color: element.period_7.color}" class="table-cell-css"> {{element.period_7.name}} </td>
+        </ng-container>
+    
+        <!-- Period Column -->
+        <ng-container matColumnDef="period_8">
+            <th mat-header-cell *matHeaderCellDef> Period 8 <br> 1:20 - 2:00</th>
+            <td mat-cell *matCellDef="let element" [ngStyle]="{color: element.period_8.color}" class="table-cell-css"> {{element.period_8.name}} </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+    </table>
+    
+    <mat-paginator [length]="100"
+                [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator>

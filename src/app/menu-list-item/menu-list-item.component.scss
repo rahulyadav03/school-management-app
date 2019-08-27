@@ -1,0 +1,36 @@
+@import '../theme';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  outline: none;
+  width: 100%;
+
+  .mat-list-item.active {
+    background-color: mat-color($app-primary, 50);
+  }
+  &:hover,
+  &:focus {
+    >.mat-list-item:not(.expanded) {
+      background-color: mat-color($app-primary, 100) !important;
+    }
+  }
+}
+
+.mat-list-item {
+  padding: 2px 0;
+  display: flex;
+  width: auto;
+
+  .routeIcon {
+    margin-right: 40px;
+  }
+  background-color: green;  
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.my-menu-list-item {
+  padding: 2px 0 !important;
+  border-bottom: 0px solid rgb(0, 0, 0);
+  background-color: orange;
+}

@@ -1,0 +1,68 @@
+<mat-card>
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-9">
+                <mat-form-field>
+                    <mat-label>select Leave</mat-label>
+                    <mat-select placeholder="Leave Code" name="LEAVE_CODE" id="LEAVE_CODE" required>
+                        <mat-option *ngFor="let leave of leaves" [value]="leave.value">
+                        {{leave.viewLeave}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-9">
+                <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Leave a comment"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+        <br>
+        <button type="submit" mat-raised-button color="primary" >Save</button>
+        <button type="submit" mat-raised-button color="default" class="name_margin">Clear</button>
+    </div>
+</mat-card>
+<br><br>
+<div class="col-sm-3">
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose Date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+    <!-- Position Column -->
+    <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date. </th>
+        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+
+    <!-- Session Year Column -->
+    <ng-container matColumnDef="leave_name">
+        <th mat-header-cell *matHeaderCellDef> Leave Name. </th>
+        <td mat-cell *matCellDef="let element"> {{element.leave_name}} </td>
+    </ng-container>
+
+    <!-- Receipt Column -->
+    <ng-container matColumnDef="leave_reason">
+        <th mat-header-cell *matHeaderCellDef> Reason for Leave </th>
+        <td mat-cell *matCellDef="let element"> {{element.leave_reason}} </td>
+    </ng-container>
+
+    <!-- Event Column -->
+    <ng-container matColumnDef="leave_status">
+        <th mat-header-cell *matHeaderCellDef> Leave Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.leave_status}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+</table>
+
+<mat-paginator [length]="100"
+            [pageSize]="10"
+            [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>
